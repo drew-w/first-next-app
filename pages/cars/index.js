@@ -1,17 +1,19 @@
 import Link from "next/link";
 
-export default function CarsList() {
+//! PRETEND LIKE I GOT THIS DATA FROM AN ENDPOINT
+const cars = [{ make: "Lambo" }, { make: "Ford" }, { make: "Tesla" }];
+
+const mappedCars = cars.map((car) => {
   return (
     <div>
-      <Link as="/cars/lambo" href="/cars/[id]">
-        <button>Lambo</button>
-      </Link>
-      <Link as="/cars/ford" href="/cars/[id]">
-        <button>Ford</button>
-      </Link>
-      <Link as="/cars/tesla" href="/cars/[id]">
-        <button>Tesla</button>
+      <Link as={`/cars/${car.make}`} href="/cars/[id]">
+        <button>{car.make}</button>
       </Link>
     </div>
   );
+});
+
+
+export default function CarsList() {
+  return <div>{mappedCars}</div>;
 }

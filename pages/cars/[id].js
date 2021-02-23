@@ -15,7 +15,7 @@ export default function Car({ car }) {
         </title>
       </Head>
       <div>
-        <h1>Hello {id}</h1>
+        <h1>THIS IS A {id}</h1>
         <Link as="/cars" href="/cars">
           <button>back</button>
         </Link>
